@@ -401,6 +401,14 @@ public class Main extends Application {
 			gc.setFill(new Color(red, green, 0, 1));
 			gc.fillRect(WIDTH - (10 + (health * (HEIGHT / 200))), 10, health * (HEIGHT / 200), HEIGHT / 20);
 			
+			if (health > 10) {
+				gc.setFill(Color.BLACK);
+				gc.setFont(Font.font(font.getFamily(), HEIGHT / 30));
+				gc.setTextAlign(TextAlignment.CENTER);
+				gc.setTextBaseline(VPos.CENTER);
+				gc.fillText((int) health + "%", WIDTH - (10 + (health * (HEIGHT / 400))), 10 + (HEIGHT / 40));
+			}
+			
 			
 			// Gear
 			gc.setFill(Color.WHITE);
