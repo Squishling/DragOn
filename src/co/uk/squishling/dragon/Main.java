@@ -289,7 +289,7 @@ public class Main extends Application {
 	public static String calcDisplayTime(int time) {
 		int mins = (int) Math.floor((double) time / 3600);
 		double secs = (double) (time / 60) - (mins * 60);
-		double ms = (double) (((double) time / 60) * 1000) - (secs * 1000);
+		double ms = (double) ((((double) time / 60) * 1000) - (secs * 1000)) - (mins * 60000);
 		
 		return new DecimalFormat("00").format(mins) + ":" + new DecimalFormat("00").format(secs) + "." + new DecimalFormat("000").format(ms);
 	}
@@ -512,7 +512,7 @@ public class Main extends Application {
 			gc.strokeArc(WIDTH - ((HEIGHT / 5) + (HEIGHT / 50)), HEIGHT - ((HEIGHT / 5) + (HEIGHT / 50)), HEIGHT / 2.5, HEIGHT / 2.5, 90, 90, ArcType.OPEN);
 			
 			// Interval lines
-			for (int i = 0; i < 5; i ++) {
+			for (int i = 0; i < 5; i++) {
 				double lineAngle = (90 / 4) * i;
 				gc.setStroke(Color.WHITE);
 				gc.setLineWidth(HEIGHT / 250);
